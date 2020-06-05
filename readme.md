@@ -2,7 +2,7 @@
 ## Task is to implement Flow control and loss recovery in C
 This program sends images from client to server and then the server checks if they exit on the server. Then it writes to the file outputFile.txt if they do exist or not.
    
-Please read the assignment.pdf to get context of what this task is supposed to do
+The task at hand was to implement Flow control and Loss recovery for a program that sends pictures as UDP packets. To see the complete assignment, please contact me at martin.owren@gmail.com
    
 Please read the section about assumptions at the bottom before running the project
 
