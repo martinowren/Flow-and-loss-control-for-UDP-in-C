@@ -1,0 +1,42 @@
+## server
+serverLowerBound = 0
+serverUpperBound = 7
+onReceivePacket
+	if(packet != termination packet)
+		if(seqNumber == serverLowerBound)
+			serverLowerBound++
+			compareImages
+			sendAck
+			serverUpperBound++
+		else
+			ignorePacket
+	else
+		close socket
+		exit program
+
+
+## client
+windowSize = 7
+clientLowerBound = 0
+clientUpperBound = 0
+	while allePakkerErSendt != true 
+		while (clientUpperBound - clientLowerBound) < windowSize
+			sendPacket
+			clientUpperBound++
+			addPacketToLinkList
+			startTimer
+		while inComingMessages != 0 
+			recfrom
+			if ACKnumber == clientLowerBound
+				clientLowerBound++
+				removePacketFromLinkList
+				stopTimer
+			else
+				if Timer > 5 sekunder
+					for each node in link list
+						send
+
+				
+	
+	sendTerminationPacket
+
